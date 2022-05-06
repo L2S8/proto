@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Send message</title>
+    <title>Home page</title>
 </head>
 <body>
-<h1>Send Message</h1>
-<form action="../send" method="post">
-<input type="submit" name="sendButton" value="Send" />
-</form>
+<h1>wow</h1>
+<a th:href="|@{formular/view}|">Post Something</a>
+<a th:href="|@{search/view}|">Search for film</a>
+<a th:href="|@{/viewAll}|">View all films</a>
+
 </body>
 </html>

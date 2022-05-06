@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View All</title>
+</head>
+<body>
+    <h1>Alle Texte</h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Seen</th>
+            <th>Functions</th>
+        </tr>
+    <tr th:each="film : ${filmList}">
+            <td th:text="${film.id}"></td>
+            <td th:text="${film.title}"></td>
+            <td th:text="${film.date}"></td>
+            <td th:text="${film.seen}"></td>
+            <td>
+                <a th:href="|@{edit/view/}${film.id}|">Edit</a>
+                <a th:href="|@{delete/}${film.id}|">Delete</a>
+            </td>
+    </tr>
+    </table>
+    <a th:href="|@{/}|">Back to home</a>
+</body>
+</html>

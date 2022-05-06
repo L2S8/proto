@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Message sent!</title>
+</head>
+    <body>
+        <h1>Deine Nachricht wurde (wahrscheinlich) gesendet</h1>
+        <p th:text="${film}"></p>
+        <a th:href="|@{/viewAll}|">View all films</a>
+        <a th:href="|@{/}|">Back to home</a>
+    </body>
+</html>

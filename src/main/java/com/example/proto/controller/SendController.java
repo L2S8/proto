@@ -6,21 +6,15 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.MediaType;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.logging.LogManager;
 
-@WebServlet("/send")
-public class sendController extends HttpServlet {
-    String url = "https://netzebw600.webhook.office.com/webhookb2/7c9e1637-4cd0-4ca0-b7db-29cf94c867b3@6acddf22-08fd-4573-b5a7-51abbd1c4b68/IncomingWebhook/8e27be66ca9e4a8db8cf24d2a3c5007b/dbd99df0-6bde-424e-8330-5567b1e84e05";
+public class SendController {
+   /* String url = "https://netzebw600.webhook.office.com/webhookb2/7c9e1637-4cd0-4ca0-b7db-29cf94c867b3@6acddf22-08fd-4573-b5a7-51abbd1c4b68/IncomingWebhook/8e27be66ca9e4a8db8cf24d2a3c5007b/dbd99df0-6bde-424e-8330-5567b1e84e05";
 
      @Override
      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          if (request.getParameter("sendButton") != null) {
+
              System.out.println("test");
              post();
          }
@@ -39,5 +33,13 @@ public class sendController extends HttpServlet {
                 .addHeader("Content-Type", "application/json")
                 .build();
         Response response = client.newCall(request).execute();
-    }
+    }*/
 }
+//WebClient oder RestTemplate
+//TeamsAPIService sendwebhook()
+
+//PostMapping(path = "/post")
+//public string post(model, text)
+//addatribute(text)
+
+//service.sendwebhook()

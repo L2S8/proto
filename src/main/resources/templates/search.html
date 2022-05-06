@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search</title>
+</head>
+<body>
+<h1>Search for film</h1>
+
+
+<form th:action="@{/search/post}" method="post">
+    <div>
+        <p>By Id:</p>
+        <input type="text" th:field="${film.id}" />
+    </div>
+    <div>
+        <p>By Title:</p>
+        <input type="text" th:field="${film.title}" />
+    </div>
+    <div>
+        <p>By Date:</p>
+        <input type="datetime" th:field="${film.date}" />
+    </div>
+    <p>By Seen:</p>
+    <input type="checkbox" th:field="${film.seen}" />
+    <input type="submit" th:value="Send" />
+</form>
+</body>
+</html>

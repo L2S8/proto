@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Send message</title>
+</head>
+<body>
+<h1>Send Message</h1>
+
+
+<form th:action="@{/edit/put}" method="post">
+    <div>
+        <p>Id of the film you want to change:</p>
+        <p th:text="${film.id}"></p>
+        <input type="text" th:field="${film.id}" hidden/>
+    </div>
+    <div>
+        <label>New Title:
+            <input type="text" th:field="${film.title}"/>
+            <p th:if="${#fields.hasErrors('film.title')}" th:errors="${film.title}">Name can't be empty</p>
+        </label>
+
+    </div>
+    <div>
+        <label>New Date:
+            <input type="datetime" th:field="${film.date}"/>
+        </label>
+    </div>
+    <label>Seen?:
+        <input type="checkbox" th:field="${film.seen}"/>
+    </label>
+    <div>
+        <input type="submit" th:value="Send" />
+    </div>
+</form>
+</body>
+</html>

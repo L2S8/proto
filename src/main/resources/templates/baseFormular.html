@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}">Title message</title>
+</head>
+<body>
+<h1 th:text="${title}">Title Message</h1>
+
+
+<form th:action="@{${redirect}}" method="post">
+    <div th:switch="${type}" th:remove="tag">
+        <label th:case="post">Id:
+            <input type="text" th:field="${film.id}"/>
+        </label>
+        <label th:case="edit">Id of the post you want to change:
+            <p th:text="${film.id}"></p>
+            <input type="text" th:field="${film.id}" hidden/>
+        </label>
+    </div>
+
+    <div th:switch="${type}" th:remove="tag">
+        <label th:case="post">Title:
+            <input type="text" th:field="${film.title}"/>
+        </label>
+
+        <label th:case="edit">New Title:
+            <input type="text" th:field="${film.title}"/>
+            <p th:if="${#fields.hasErrors('film.title')}" th:errors="${film.title}">Name can't be empty</p>
+        </label>
+    </div>
+
+    <div th:switch="${type}" th:remove="tag">
+        <label th:case="post">Date:
+            <input type="datetime" th:field="${film.date}" />
+        </label>
+        <label th:case="edit">New Date:
+            <input type="datetime" th:field="${film.date}" />
+            <p th:if="${#fields.hasErrors('film.date')}" th:errors="${film.date}">Date is invalid</p>
+        </label>
+    </div>
+
+    <label>Seen?:
+        <input type="checkbox" th:field="${film.seen}"/>
+    </label>
+    <div>
+        <input type="submit" th:value="Send" />
+    </div>
+</form>
+</body>
+</html>

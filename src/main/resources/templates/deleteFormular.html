@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Delete Film</title>
+</head>
+<body>
+<h1>Delete Film</h1>
+
+
+<form th:action="@{/delete}" method="delete">
+    <div>
+        <p>Id of the film you want to delete:</p>
+        <input type="text" th:field="${film.id}"/>
+    </div>
+
+    <input type="submit" th:value="Send" />
+</form>
+</body>
+</html>

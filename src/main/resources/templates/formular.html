@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Send message</title>
+</head>
+<body>
+<h1>Send Message</h1>
+
+
+<form th:action="@{/formular/post}" method="post">
+    <div>
+        <label>Id:
+            <input type="text" th:field="${film.id}"/>
+        </label>
+    </div>
+    <div>
+        <label>Title:
+            <input type="text" th:field="${film.title}"/>
+        </label>
+    </div>
+    <div>
+        <label>Date:
+            <input type="datetime" th:field="${film.date}" />
+        </label>
+    </div>
+    <label>Seen?:
+        <input type="checkbox" th:field="${film.seen}"/>
+    </label>
+    <div>
+        <input type="submit" th:value="Send" />
+    </div>
+</form>
+</body>
+</html>
